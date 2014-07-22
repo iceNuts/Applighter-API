@@ -1,0 +1,629 @@
+Applighter API
+================
+
+#### School
+  - URL: /webapp/school
+    
+  - GET: 
+            /webapp/school/o/object_id
+
+           Get One School Information in Json
+
+           /webapp/school
+
+           Get A list of School Information
+
+           Or return 500 error
+
+  - POST:
+           /webapp/school
+
+           POST in Json
+
+           Return 200 OK or 500 error
+
+  - PUT:
+           /webapp/school
+
+           PUT in Json
+
+           Return 200 OK or 500 error
+
+  - DELETE:
+            /webapp/school/o/object_id
+
+           Delete One School Information
+
+           Or return 500 error
+
+    POST Json Example:
+
+            {
+                "school_name":"wahsington university in st.louis",
+                "chinese_name":"圣路易斯华盛顿",
+                "school_rank":"14",
+                "school_location":"One Brookings Drive",
+                "ad_office":"OneBrookings Drive",
+                "school_geo":"31.44, -127.56",
+                "school_website":"http://wustl.edu",
+                "contact":
+                {
+                  "phone":"314-591-2233",
+                  "email":"wash@wustl.edu"
+                },
+               "common_app": 0,
+               "retention": 3.4,
+               "description":"this is an awesome school",
+               "thumbnail":"wow",
+               "deadlines":{
+                  "EA":"2014-03-01",
+                  "ED":"2014-04-05"
+               },
+               "landscape":[
+                  "lin 1",
+                  "link 2"
+               ],
+               "GPA":"3.99",
+               "ACT":{
+                  "math":{
+
+                  }
+               },
+               "SAT":{
+
+               },
+               "tuition":"65500",
+               "undergraduate":"7600",
+               "acceptance":"17.6",
+               "fun":"B+Academics AAthletics B+Campus Dining B-Campus Housing B+Campus Strictness B+Computers B+Diversity BDrug Safety A-Facilities BGirls B+Greek Life B-Guys B-Health & Safety A-Local Atmosphere ANightlife AOff-Campus Dining B-Off-Campus Housing C-Parking B+Transportation C+Weather",
+               "note":["女生比较丑？","男生比较帅!"],
+               "department":
+               [
+                  {
+                    "name":"computer science",
+                    "rank":"39",
+                    "contact":
+                    {
+                      "phone":"314-808-7722",
+                      "email":"cse@wustl.edu"
+                    }
+                  }
+               ]
+            }
+
+    PUT Json Example:
+
+            {
+                "obj_id":"ab213129asded21"
+                "school_name":"wahsington university in st.louis",
+                "school_rank":"14",
+                "school_location":"One Brookings Drive",
+                "ad_office":"OneBrookings Drive",
+                "school_geo":"31.44, -127.56",
+                "school_website":"http://wustl.edu",
+                "contact":
+                {
+                  "phone":"314-591-2233",
+                  "email":"wash@wustl.edu"
+                },
+               "common_app": 0,
+               "retention": 2.7,
+               "description":"this is an awesome school",
+               "thumbnail":"wow",
+               "deadlines":{
+                  "EA":"2014-03-01",
+                  "ED":"2014-04-05"
+               },
+               "landscape":[
+                  "lin 1",
+                  "link 2"
+               ],
+               "GPA":"3.99",
+               "ACT":{
+                  "math":{
+
+                  }
+               },
+               "SAT":{
+
+               },
+               "tuition":"65500",
+               "undergraduate":"7600",
+               "acceptance":"17.6",
+               "fun":"B+Academics AAthletics B+Campus Dining B-Campus Housing B+Campus Strictness B+Computers B+Diversity BDrug Safety A-Facilities BGirls B+Greek Life B-Guys B-Health & Safety A-Local Atmosphere ANightlife AOff-Campus Dining B-Off-Campus Housing C-Parking B+Transportation C+Weather",
+               "note":["女生比较丑？","男生比较帅!"],
+               "department":
+               [
+                  {
+                    "name":"computer science",
+                    "rank":"39",
+                    "contact":
+                    {
+                      "phone":"314-808-7722",
+                      "email":"cse@wustl.edu"
+                    }
+                  }
+               ]
+            }
+
+
+
+#### Ajax Upload File
+
+  - URL: /webapp/ajax/upload/file
+
+  - Available file keys:
+
+    - file
+  
+  - POST:
+
+         {
+            'path': path on OSS
+         }
+          
+         Upload file onto OSS. File type required: 
+
+         docx
+
+         pdf
+
+         doc
+
+         docm
+
+         dotm
+
+         txt
+
+         jpeg
+
+         png
+
+         jpg
+
+         File path rule:
+
+         orgnization name / (user id | school name ) / file type
+
+         example:
+
+            yunshen/53c4e54bd49018d78cbb42e6/png
+
+         Store everything which is OUR COMPANY in yunshen, like school thumbnail or landscap etc.
+
+         Path should be all in lower case.
+
+
+#### Session
+
+  - Schema:
+
+        COOKIE {
+            userid: user_id
+            token: token
+        }
+
+#### Custom Decorator
+
+  - Availabel decorators:
+
+          @user_login_required : require any http request method 
+
+
+#### User 
+  
+  - register 
+
+    - URL : /webapp/register
+
+    - POST :
+
+          Post email, password and user_type to register as a user.
+
+      POST Json Example:
+
+          {
+            "email" : "billzeng808@gmail.com",
+            "password" : "123",
+            "user_type" : "2"/"4" 2 is student; 4 is parent
+          }
+
+  - login (3 days expire)
+
+    - URL : /webapp/login
+
+    - POST :
+
+          Post email and password to login, server would return an url. Redirect this url to right place.
+
+      POST Json Example:
+
+          {
+            "email" : "billzeng808@gmail.com",
+            "password" : "123"
+          }
+
+  - check register email valid
+
+    - URL : /webapp/register/check
+
+    - POST :
+
+        Post email to check if it has been registered.
+
+      POST Json Example:
+
+          {
+            "email" : "billzeng808@gmail.com"
+          }    
+
+  - User 
+
+      Return 200 OK or 500 Error
+
+    - PUT
+
+        - URL : /webapp/user
+
+          Put Json to update user infomation.
+
+              Availabe keys:
+
+              name
+
+              title
+          
+              avatar : string
+          
+              contact_list : Dict
+          
+              user_name
+          
+              user_password
+          
+              gender : 0 girl 1 boy
+          
+              school
+          
+              year
+          
+              target : undergraduate? graduate? highschool?
+          
+              rank_in_school 
+          
+              gpa_in_school : float
+          
+              score_list : Dict
+          
+              activity_list : Dict
+          
+              major_interest : Dict
+          
+              award_list : Dict
+          
+              general_info : String
+
+    - GET
+
+        - URL : /webapp/user/o/obj_id
+
+
+    - DELETE
+
+        - URL : /webapp/user/o/obj_id
+
+    - USER ACTIVATION (Gmail Enterprise As Mail Server)
+
+        Return 200 or 500 error
+
+        - URL : /webapp/student/activate
+
+        - POST :
+
+              {
+                "userids":
+                [
+                  id_0,
+                  id_1,
+                  ...
+                ]
+              }
+
+            Server will send emails to those users with a activation code.
+
+        - GET :
+
+            User click on the activation url. Frontend should check if the cookie holds userid and token(logged in?). If not logged in, frontend should redirect user to login view, afterwards, continue redirecting to activation url.
+
+  - Counselor
+
+    - POST 
+
+        Create a new counselor
+
+        - URL : /webapp/admin/counselor
+
+          Json example:
+
+              {
+                "name":"LI",
+                "avatar":"", 
+                "email":"oops",
+                "password":"123"
+              }
+
+              All fields above are required
+
+  - Student
+
+    - LINK A COUNSELOR
+
+      Link a counselor when register (At least one counselor)
+
+      - URL : /webapp/student/linkcounselor
+
+          Json example:
+
+              {
+                "email":"oops"
+              }
+
+          Put Counselor user name(email). Student should logged in.
+
+#### Event
+
+  - POST :
+
+      - URL : /webapp/user/event
+
+          Json example:
+
+              {  
+                 "title":"一起打飞机",
+                 "location":"WashU",
+                 "start_time":"2014-06-07 12:40",
+                 "end_time":"2014-06-07 13:40",
+                 "alert":{  
+                    "trigger_time":"2014-06-07 11:00",
+                    "alert_type":0,
+                    "userids":
+                    [  
+                       "53bff6f2d49018ce8d86435f"
+                    ]
+                 },
+                 "invitees":[  
+                    {
+                      "userid" : "53bff6f2d49018ce8d86435f",
+                      "status" : "-1"
+                    }
+                 ]
+              }
+
+          Optional: alert and invitees could empty, like:
+
+              {  
+                 "title":"一起打飞机",
+                 "location":"WashU",
+                 "start_time":"2014-06-07 12:40",
+                 "end_time":"2014-06-07 13:40",
+                 "alert":{  
+                 },
+                 "invitees":[  
+                 ]
+              }
+
+          About invitees:
+              
+              {
+                "userid": id
+                "status": -1
+              }
+
+              -1 is initial state;(default)
+
+              0 is deny;
+
+              1 is accept;
+
+  - GET :
+
+      - URL : /webapp/user/event/o/obj_id 
+
+            Return a specific event
+
+      - URL : /webapp/user/event 
+
+            Return user's all events
+
+  - PUT :
+
+      - URL : /webapp/user/event
+
+      Json is similar with POST, all fields are required.
+
+            {
+                "id" : event object id
+
+                ....
+            }
+
+  - DELETE :
+
+      - URL : /webapp/user/event/o/obj_id
+
+#### Event Invitation (non-test)
+
+  - URL : /webapp/event/invitation
+
+    - Resend Invitation 
+
+            {
+                "event" : event id,
+                "userid" : userid
+            }
+
+            Send this event invitation to user
+
+    - Accept Invitation
+
+            {
+                "event" : event id, 
+            }
+
+            Accept this event invitation
+
+    - Decline Invitation
+
+            {
+                 "event" : event id
+            }
+
+            Decline this event invitation
+
+#### TaskGroup
+
+  - POST :
+
+      - URL : /webapp/taskgroup
+
+        - Create a new TaskGroup
+
+                {
+                   "userid": TG task owner id,
+                   "alias" : TG name,
+                   "description" : TG description
+                }
+
+            create a TG for student
+
+  - GET :
+
+      - URL : /webapp/taskgroup/o/obj_id
+
+            Get one taskgroup by obj_id
+
+      - URL : /webapp/taskgroup/u/userid
+
+            Get all taskgroups by userid
+
+  - PUT :
+
+      - URL : /webapp/taskgroup
+
+        - Counselor update student taskgroup info
+
+                {
+                    "taskgroup": taskgroup id,
+                    "alias": TG name, 
+                    "description": TG description,
+                    "userid": TG task owner id,
+                    "public_tasks": A few TG ids
+                }
+
+  - DELETE :
+
+      - URL : /webapp/taskgroup/o/obj_id
+
+        - Counselor deletes a taskgroup by id
+
+#### Task
+
+  - POST :
+
+      - URL : /webapp/task
+
+        - Create a new Task
+
+                {
+                   "alias": Task name,
+                   "owner" : owner id,
+                   "description" : Task description,
+                   "taskgroup": TG id,
+                   "associate_owners": [id, id_1...],
+                   "deadline": "2014-03-24 03:24"
+                }
+
+            create a Task for a TaskGroup
+
+  - GET :
+
+      - URL : /webapp/task/o/task id
+
+            Get one Task by Task id
+
+      - URL : /webapp/task/u/taskgroup id
+
+            Get all Tasks by TG id
+
+  - PUT :
+
+      - URL : /webapp/task
+
+        - Counselor update student taskgroup info
+
+                {
+                    "task": task id
+                    "alias": task name,
+                    "description": TG description,
+                    "associate_owners": everybody who is involved, id,
+                    "deadline": "2014-03-24 03:24",
+                    "task_status": 0/1 inactive? active?
+                }
+
+  - DELETE :
+
+      - URL : /webapp/task/o/task id
+
+        - Counselor deletes a taskgroup by id
+
+#### Comment
+
+  - POST :
+
+      - URL : /webapp/task/comment
+
+        - Create a new Comment
+
+                {
+                   "task": task id,
+                   "content": what you say
+                }
+
+            create a Comment for a Task
+
+  - GET :
+
+      - URL : /webapp/task/comment?timestamp=(float)&limit=(int)&tid=(id)
+
+            Get a list of comments of a task before timestamp limited by a number
+
+            Example:
+
+                /webapp/task/comment/?timestamp=1405659283&limit=1&tid=53c77ccad4901831badcb98d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
