@@ -602,8 +602,74 @@ Applighter API
 
                 /webapp/task/comment/?timestamp=1405659283&limit=1&tid=53c77ccad4901831badcb98d
 
+#### Activity
+
+  - POST :
+
+      - URL : /webapp/user/activity
+
+        - Get a list of activity
+
+                activity_types = {
+                    'comment' :     1,      # 评论了
+                    'appfile' :     2,      # 上传了
+                    'task' :        3,      # 添加了task 修改了task
+                    'deadline' :    4,      # deadline(task)  (服务器/Mobile)发生当天有提醒 （Mobile)提前两天
+                    'counselor' :   5,      # Counselor Change
+                }
+
+                function type : 0, get activity by limit
+
+                {
+                   "func_type" : "0"
+                   "limit": an int number,
+                   "timestamp": timestamp, utc float
+                   "revert": 
+                    1 True search the past from timestamp
+                    (t1 < t2 < t3 < ... < timestamp), 
+                    0 False search the future from timestamp
+                    (timestamp <= t1 <= t2 <= t3 ... <= tn)
+                   "type": activity type
+                }
+
+                function type : 1, get activity by timestamp
+
+                {
+                   "func_type" : "1"
+                   "from_timestamp": timestamp, utc float
+                   "end_timestamp": timestamp, utc float
+                   "type": activity type
+                }
+
+                from_timestamp < end_timestamp
+
+                Return JSON example:
+
+                {
+                   "result": [
+                      {
+                          "_id": "53cf7dafd4901859f175cdca", 
+                          "user_id": "53c4e5bed49018d78cbb42ea", 
+                          "activity_type": 1, 
+                          "description": "\u5218\u603b\u5728OO TASK\u6dfb\u52a0\u4e86\u4e00\u6761\u8bc4\u8bba:\"example2\"", 
+                          "update_time": "2014-07-23T09:17:35.995", 
+                          "link": "/webapp/task/o/53c77d22d4901831dd362b8d", 
+                          "dictionary": {}
+                      }, 
+                      {
+                          "_id": "53cf7c68d49018589ae16438", 
+                          "user_id": "53c4e5bed49018d78cbb42ea", 
+                          "activity_type": 1, 
+                          "description": "\u5218\u603b\u5728OO TASK\u6dfb\u52a0\u4e86\u4e00\u6761\u8bc4\u8bba:\"example\"", 
+                          "update_time": "2014-07-23T09:12:08.077", 
+                          "link": "/webapp/task/o/53c77d22d4901831dd362b8d", 
+                          "dictionary": {}
+                      }
+                   ]
+                }
 
 
+            
 
 
 
