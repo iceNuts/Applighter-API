@@ -226,10 +226,10 @@ Applighter API
           {
             "email" : "billzeng808@gmail.com",
             "password" : "123",
-            "user_type" : "2"/"4" 2 is student; 4 is parent
+            "user_type" : "1"/"2"/"4" 1 is counselor; 2 is student; 4 is parent
           }
 
-  - login (3 days expire)
+  - login (30 days expire)
 
     - URL : /webapp/login
 
@@ -242,7 +242,22 @@ Applighter API
           {
             "email" : "billzeng808@gmail.com",
             "password" : "123"
+            "user_type" : "0"/"1"/"2"/"4" 0 is CounselorAdmin; 1 is Counselor; 2 is Student; 4 is Parent
           }
+
+      User status code:
+
+          2001  active student but detailed information is not completed -> detailed page
+          2002  inactive student and general information is not completed -> basic info page
+          2003  inactive student and general information is completed -> school map view page
+
+          3001  active student with everything done -> student dashboard page
+          3002  archived student -> student summary page
+
+          4001  Parent logged in
+          4002  Counselor logged in
+          4003  Counselor Admin logged in
+
 
   - check register email valid
 
