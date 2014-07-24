@@ -11,8 +11,6 @@ authentication_error_code = [
     
 ]
 
-
-
 # User API
 
 register_error_code = [
@@ -21,6 +19,22 @@ register_error_code = [
     '2001', # invalid email
     '9000', # Unknown error/Network error
 ]
+
+login_error_code = [
+
+    '2000', # Invalid username/password
+    '9000', # Unknown error/Network error
+]
+
+user_op_error_code = [
+    
+    '2000', # User does not exist
+    '2004', # Invalid activation code
+    '2005', # Activation session expires
+    '9000', # Unknow error, wrong field is most possible
+]
+
+# Task/TaskGroup API
 
 ```
 
