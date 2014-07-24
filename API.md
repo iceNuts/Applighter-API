@@ -321,14 +321,14 @@ Applighter API
 
         - POST :
 
-              {
-                "userids":
-                [
-                  id_0,
-                  id_1,
-                  ...
-                ]
-              }
+                {
+                  "userids":
+                  [
+                    id_0,
+                    id_1,
+                    ...
+                  ]
+                }
 
             Server will send emails to those users with a activation code.
 
@@ -626,7 +626,7 @@ Applighter API
                    "timestamp": timestamp, utc float
                    "revert": 
                     1 True search the past from timestamp
-                    (t1 < t2 < t3 < ... < timestamp), 
+                    (t1 <= t2 <= t3 <= ... <= timestamp), 
                     0 False search the future from timestamp
                     (timestamp <= t1 <= t2 <= t3 ... <= tn)
                    "type": activity type
