@@ -668,6 +668,25 @@ Applighter API
                    ]
                 }
 
+#### Device
+
+  - POST/PUT :
+
+      - URL : /webapp/user/device
+
+        - Register/Update a user's device
+
+                device_type_options = {
+                    'iOS' : 0,
+                    'Android' : 1
+                }
+
+                {
+                    "type" : device type,
+                    "token" : device push token,
+                    "udid" : device udid
+                }
+
 
             
 
