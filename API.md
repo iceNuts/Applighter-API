@@ -616,6 +616,7 @@ Applighter API
                     'task' :        3,      # 添加了task 修改了task
                     'deadline' :    4,      # deadline(task)  (服务器/Mobile)发生当天有提醒 （Mobile)提前两天
                     'counselor' :   5,      # Counselor Change
+                    'school' :      6,      # School Change
                 }
 
                 function type : 0, get activity by limit
