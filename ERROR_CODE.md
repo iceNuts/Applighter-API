@@ -34,7 +34,36 @@ user_op_error_code = [
     '9000', # Unknow error, wrong field is most possible
 ]
 
-# Task/TaskGroup API
+# TaskGroup API
+
+taskgroup_error_code = [
+    
+    '2000', # Bad fields
+    '2001', # Bad Request Resource doesn't exist
+    '2002', # Permission Denied
+    '9000', # Unknow error, wrong field is most possible
+]
+
+# Task API
+
+task_error_code = [
+    
+    '2000', # Bad fields
+    '2001', # Bad Request Resource doesn't exist
+    '2002', # Permission Denied
+    '9000', # Unknow error, wrong field is most possible
+]
+
+# Comment API
+
+comment_error_code = [
+    
+    '2000', # Bad fields
+    '2001', # Bad Request Resource doesn't exist
+    '2002', # Permission Denied
+    '9000', # Unknow error, wrong field is most possible
+
+]
 
 ```
 
