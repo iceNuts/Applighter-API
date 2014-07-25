@@ -601,7 +601,8 @@ Applighter API
         - Create a new Comment
 
                 {
-                   "task": task id,
+                   "owner": owner object id, Post/Task
+                   "comment_type": 0 Post / 1 Task
                    "content": what you say
                 }
 
@@ -609,13 +610,13 @@ Applighter API
 
   - GET :
 
-      - URL : /webapp/task/comment?timestamp=(float)&limit=(int)&tid=(id)
+      - URL : /webapp/task/comment?timestamp=(float)&limit=(int)&tid=(id)&type=(type)
 
-            Get a list of comments of a task before timestamp limited by a number
+            Get a list of comments of a task/post before timestamp limited by a number
 
             Example:
 
-                /webapp/task/comment/?timestamp=1405659283&limit=1&tid=53c77ccad4901831badcb98d
+                /webapp/task/comment/?timestamp=1405659283&limit=1&tid=53c77ccad4901831badcb98d&type=1
 
 #### Activity
 
