@@ -65,6 +65,18 @@ comment_error_code = [
 
 ]
 
+# Post API
+
+post_error_code = [
+    
+    '2000', # Bad fields
+    '2001', # Bad Request Resource doesn't exist
+    '2002', # Permission Denied
+    '9000', # Unknow error, wrong field is most possible
+
+]
+
+
 ```
 
 
