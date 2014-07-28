@@ -342,6 +342,27 @@ Applighter API
 
         - URL : /webapp/user/o/obj_id
 
+    - QUICK SEARCH
+
+        - URL : /webapp/user/quicksearch
+
+        - GET :
+
+                Simply return a list of user's name/uid/avatar, see example:
+
+                    { 
+                        "result" :
+                        [
+                          {
+                              "name" : name,
+                              "_id" : uid,
+                              "avatar" : avatar link,
+                              'user_type' : 0 admin/1 counselor/2 student/4 parent
+                          }
+                          ...
+                        ]
+                    }
+
     - USER ACTIVATION (Gmail Enterprise As Mail Server)
 
         Return 200 or 500 error
