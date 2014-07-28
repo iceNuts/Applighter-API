@@ -699,6 +699,18 @@ Applighter API
                    ]
                 }
 
+  - PUT :
+
+      - URL : /webapp/user/activity
+
+        - Update a list of activities read status to be 'read'
+
+                {
+                    "activities" : [a_0, a_1, a_2 ... a_n]
+                }
+
+                activity ids
+
 #### Device
 
   - POST/PUT :
