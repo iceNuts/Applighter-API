@@ -271,7 +271,21 @@ Applighter API
 
           {
             "email" : "billzeng808@gmail.com"
-          }    
+          }   
+
+  - change user password
+
+    - URL : /webapp/changepassword 
+
+    - POST : 
+
+        Post user's old password to validate.
+
+            { 
+              'password' : old password
+            }
+
+            Then use user put method to update new password
 
   - User 
 
