@@ -309,7 +309,7 @@ Applighter API
           
               user_name
           
-              user_password
+              user_passwd
           
               gender : 0 girl 1 boy
           
