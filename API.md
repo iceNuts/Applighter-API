@@ -354,9 +354,6 @@ Applighter API
                  "schedule_event_list":[
 
                  ],
-                 "activity_list":{
-                    "窝里横":"我参加了很多窝里横的比赛，觉得自己很屌很NB。"
-                 },
                  "user_name":"14ed2b0d82fe94312618ea8183127f6d",
                  "counselor_list":[
 
@@ -373,9 +370,6 @@ Applighter API
                  ],
                  "school":"Beihang U",
                  "name":"刘总",
-                 "award_list":{
-                    "北京市一等奖":"当年我也是头牌啊"
-                 },
                  "gender":0,
                  "avatar":"http://applighter-data-node-a.oss-cn-hangzhou.aliyuncs.com/AWS/2588f953575885b888dbbbfdd48410aa-1406019285.65.jpg",
                  "user_passwd":"202cb962ac59075b964b07152d234b70",
