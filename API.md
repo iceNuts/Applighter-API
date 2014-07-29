@@ -662,12 +662,15 @@ Applighter API
         - Get a list of activity
 
                 activity_types = {
+                    'post' :        0,      # 添加/修改了 post
                     'comment' :     1,      # 评论了
                     'appfile' :     2,      # 上传了
                     'task' :        3,      # 添加了task 修改了task
                     'deadline' :    4,      # deadline(task)  (服务器/Mobile)发生当天有提醒 （Mobile)提前两天
-                    'counselor' :   5,      # Counselor Change
-                    'school' :      6,      # School Change
+                    'taskgroup' :   8,      # TaskGroup Info
+
+                    'counselor' :   101,      # Counselor Change
+                    'school' :      102,      # School Change
                 }
 
                 function type : 0, get activity by limit
@@ -751,8 +754,52 @@ Applighter API
                     "udid" : device udid
                 }
 
+#### Alert
 
-            
+  - POST :
+
+      - URL : /webapp/op/alert
+
+        - Create an alert for a task/or something later
+
+                alert_owner_types = {
+                  'task' : 0
+                }
+
+                {
+                    "object_owner_id" : object owner id (for example, task id),
+                    "owner_type" : owner type int,
+                    "trigger_time" : "2014-05-06 13:55"
+                }
+
+  - PUT :
+
+      - URL : /webapp/op/alert
+
+        - Register/Update a user's device
+
+                device_type_options = {
+                    'iOS' : 0,
+                    'Android' : 1
+                }
+
+                {
+                    "obj_id" : alert object id,
+                    "trigger_time" : "2014-05-06 13:55"
+                }
+
+  - GET :
+
+      - URL : /webapp/op/alert/u/obj_owner_id
+
+        - Get a list of alerts by object owner id (for example, task id)
+
+  - DELETE :
+
+      - URL : /webapp/op/alert/u/obj_id
+
+        - Delete alert by alert id
+
 
 
 
