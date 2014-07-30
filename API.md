@@ -681,7 +681,7 @@ Applighter API
 
                 {
                    "owner": owner object id, Post/Task
-                   "comment_type": 0 Post / 1 Task
+                   "comment_type": 0 post / 1 task / 2 award / 3 doings
                    "content": what you say
                 }
 
