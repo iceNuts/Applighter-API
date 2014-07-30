@@ -273,9 +273,9 @@ Applighter API
             "email" : "billzeng808@gmail.com"
           }   
 
-  - change user password
+  - validate user password
 
-    - URL : /webapp/changepassword 
+    - URL : /webapp/validatepassword 
 
     - POST : 
 
