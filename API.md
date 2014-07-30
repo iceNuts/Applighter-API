@@ -325,11 +325,7 @@ Applighter API
           
               score_list : Dict
           
-              activity_list : Dict
-          
               major_interest : string
-          
-              award_list : Dict
           
               general_info : String
 
