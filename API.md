@@ -840,7 +840,87 @@ Applighter API
 
         - Delete alert by alert id
 
+#### Award
 
+  - POST :
+
+      - URL : /webapp/user/award
+
+        - Create an award for user
+
+                {
+                    "alias" : award name,
+                    "description" : details
+                }
+
+  - PUT :
+
+      - URL : /webapp/user/award
+
+        - Update an award 
+
+                {
+                    "award" : award obj id
+                    "alias" : award name,
+                    "description" : details
+                }
+
+  - GET :
+
+      - URL : /webapp/user/award/o/obj_id
+
+        - Get an award info by award object id
+
+      - URL : /webapp/user/award/u/user id
+
+        - Get a list of awards by user id
+
+  - DELETE :
+
+      - URL : /webapp/user/award/o/obj_id
+
+        - Delete an award by award id
+
+#### Doings
+
+  - POST :
+
+      - URL : /webapp/user/doings
+
+        - Create a doings for user
+
+                {
+                    "alias" : doings name,
+                    "description" : details
+                }
+
+  - PUT :
+
+      - URL : /webapp/user/doings
+
+        - Update an doings 
+
+                {
+                    "doings" : doings obj id
+                    "alias" : doings name,
+                    "description" : details
+                }
+
+  - GET :
+
+      - URL : /webapp/user/doings/o/obj_id
+
+        - Get an doings info by doings object id
+
+      - URL : /webapp/user/doings/u/user id
+
+        - Get a list of awards by user id
+
+  - DELETE :
+
+      - URL : /webapp/user/doings/o/obj_id
+
+        - Delete an doings by doings id
 
 
 
