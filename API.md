@@ -720,6 +720,9 @@ Applighter API
                     'school' :      102,      # School Change
                 }
 
+
+                Based on type:
+
                 function type : 0, get activity by limit
 
                 {
@@ -731,7 +734,7 @@ Applighter API
                     (t1 <= t2 <= t3 <= ... <= timestamp), 
                     0 False search the future from timestamp
                     (timestamp <= t1 <= t2 <= t3 ... <= tn)
-                   "type": activity type
+                   "type": int activity type
                 }
 
                 function type : 1, get activity by timestamp
@@ -740,10 +743,38 @@ Applighter API
                    "func_type" : "1"
                    "from_timestamp": timestamp, utc float
                    "end_timestamp": timestamp, utc float
-                   "type": activity type
+                   "type": int activity type
                 }
 
                 from_timestamp < end_timestamp
+
+
+                API Based on priority:
+
+                high priority is on main page, low pirority is in inbox
+
+                function type : 2, get activity by limit
+
+                {
+                   "func_type" : "2"
+                   "limit": an int number,
+                   "timestamp": timestamp, utc float
+                   "revert": 
+                    1 True search the past from timestamp
+                    (t1 <= t2 <= t3 <= ... <= timestamp), 
+                    0 False search the future from timestamp
+                    (timestamp <= t1 <= t2 <= t3 ... <= tn)
+                   "priority": "1" 0 low / 1 high
+                }
+
+                function type : 3, get activity by timestamp
+
+                {
+                   "func_type" : "3"
+                   "from_timestamp": timestamp, utc float
+                   "end_timestamp": timestamp, utc float
+                   "priority": "0" 0 low / 1 high
+                }
 
                 Return JSON example:
 
