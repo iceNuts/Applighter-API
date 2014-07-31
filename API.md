@@ -258,6 +258,13 @@ Applighter API
           4002  Counselor logged in
           4003  Counselor Admin logged in
 
+      Return example:
+          
+          {
+              "result" : "2003",
+              "userid" : ".."
+          }
+
 
   - check register email valid
 
