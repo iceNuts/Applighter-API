@@ -783,21 +783,23 @@ Applighter API
                       {
                           "_id": "53cf7dafd4901859f175cdca", 
                           "user_id": "53c4e5bed49018d78cbb42ea", 
+                          "read": 0,
                           "activity_type": 1, 
                           "description": "\u5218\u603b\u5728OO TASK\u6dfb\u52a0\u4e86\u4e00\u6761\u8bc4\u8bba:\"example2\"", 
                           "short_description" : "",
                           "update_time": "2014-07-23T09:17:35.995", 
-                          "link": "/webapp/task/o/53c77d22d4901831dd362b8d", 
+                          "link": "53c77d22d4901831dd362b8d", 
                           "dictionary": {}
                       }, 
                       {
                           "_id": "53cf7c68d49018589ae16438", 
                           "user_id": "53c4e5bed49018d78cbb42ea", 
+                          "read": 0,
                           "activity_type": 1, 
                           "description": "\u5218\u603b\u5728OO TASK\u6dfb\u52a0\u4e86\u4e00\u6761\u8bc4\u8bba:\"example\"", 
                           "short_description" : "",
                           "update_time": "2014-07-23T09:12:08.077", 
-                          "link": "/webapp/task/o/53c77d22d4901831dd362b8d", 
+                          "link": "53c77d22d4901831dd362b8d", 
                           "dictionary": {}
                       }
                    ]
