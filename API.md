@@ -964,6 +964,48 @@ Applighter API
 
         - Delete an doings by doings id
 
+#### SchoolChoice
+
+  - POST :
+
+      - URL : /webapp/op/schoolchoice
+
+        - Create a schoolchoice for user
+
+                {
+                    "alias" : schoolchoice name,
+                    "owner" : owner userid,
+                    "school": school object id,
+                    "status" : 0 in watchlist / 1 in active list
+                }
+
+  - PUT :
+
+      - URL : /webapp/op/schoolchoice
+
+        - Update a schoolchoice 
+
+                {
+                    "school" : school obj id
+                    "status" : 0 in watchlist / 1 in active list
+                }
+
+  - GET :
+
+      - URL : /webapp/op/schoolchoice/o/obj_id
+
+        - Get a school choice info by object id
+
+      - URL : /webapp/op/schoolchoice/u/userid
+
+        - Get a list of school choices by user id
+
+  - DELETE :
+
+      - URL : /webapp/op/schoolchoice/o/obj_id
+
+        - Delete a schoolchoice by objcet id
+
 
 
 
