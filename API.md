@@ -148,7 +148,7 @@ Applighter API
 
 
 
-#### Ajax Upload File
+#### Upload File
 
   - URL: /webapp/ajax/upload/file
 
@@ -193,6 +193,52 @@ Applighter API
          Store everything which is OUR COMPANY in yunshen, like school thumbnail or landscap etc.
 
          Path should be all in lower case.
+
+         When you have uploaded the file, use long polling to validate the file has been uploaded successfully. Then create an appfile index.
+
+         - POST :
+
+            URL : /webapp/op/appfile
+
+            {
+                "owner_object_id" : task/post/.. id,
+                "alias" : file name,
+                "description" : file description,
+                "version" : version #,
+                "url" : file link
+            }
+
+            Create a new appfile index
+
+          - GET :
+
+            URL : /webapp/op/appfile/o/obj_id
+
+              Get an appfile index by object id
+
+            URL : /webapp/op/appfile/oo/object owner id
+
+              Get a list appfile index by object owner id
+
+          - PUT :
+
+            URL : /webapp/op/appfile
+
+            {
+                "appfile" : appfile index id,
+                "alias"   : file name,
+                "description"   : file description,
+                "version" : version #,
+                "url" : file link
+            }
+
+            Update an appfile index
+
+          - Delete :
+
+            URL : /webapp/op/appfile/o/object id
+
+            Delete an appfile index
 
 
 #### Session
@@ -615,7 +661,6 @@ Applighter API
                     "alias": TG name, 
                     "description": TG description,
                     "userid": TG task owner id,
-                    "public_tasks": A few TG ids
                 }
 
   - DELETE :
