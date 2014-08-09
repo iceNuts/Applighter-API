@@ -1,3 +1,10 @@
+### TEST
+
+Load Test Data (will remove previous data)
+
+    - URL : http://54.191.119.132/webapp/test
+
+
 ### admin
 
 ilove@beijing.com
