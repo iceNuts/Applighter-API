@@ -1051,6 +1051,46 @@ Applighter API
 
         - Delete a schoolchoice by objcet id
 
+##### POST
+
+  - POST :
+
+      - URL : /webapp/post
+
+        - Create a new post
+
+            {
+              "alias" : post name,
+              "description" : description,
+              "associate_owner_list" : user id list, involved users
+            }
+
+  - PUT :
+
+      - URL : /webapp/post
+
+        - Update a post
+
+            {
+              "post" : post object id,
+              "alias" : post name,
+              "description" : description,
+              "associate_owner_list" : user id list, involved users
+            }
+
+  - GET :
+
+      - URL : /webapp/post/o/obj_id
+
+        - Get the post info
+
+      - URL : post/u/timestamp&userid&limit
+
+        - Get a list of post which is both visible to the current user and someone else who is asscoicated, as all post must be involved with someone else.
+
+  - DELETE :
+
+      - URL : /webapp/post/o/obj_id
 
 
 
