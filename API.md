@@ -1059,11 +1059,11 @@ Applighter API
 
         - Create a new post
 
-            {
-              "alias" : post name,
-              "description" : description,
-              "associate_owner_list" : user id list, involved users
-            }
+              {
+                "alias" : post name,
+                "description" : description,
+                "associate_owner_list" : user id list, involved users
+              }
 
   - PUT :
 
@@ -1071,12 +1071,12 @@ Applighter API
 
         - Update a post
 
-            {
-              "post" : post object id,
-              "alias" : post name,
-              "description" : description,
-              "associate_owner_list" : user id list, involved users
-            }
+              {
+                "post" : post object id,
+                "alias" : post name,
+                "description" : description,
+                "associate_owner_list" : user id list, involved users
+              }
 
   - GET :
 
