@@ -1084,9 +1084,13 @@ Applighter API
 
         - Get the post info
 
-      - URL : post/u/timestamp&userid&limit
+      - URL : /webapp/post/u?timestamp=(float)&userid=(int)&limit=(id)&type=(type)
 
-        - Get a list of post which is both visible to the current user and someone else who is asscoicated, as all post must be involved with someone else.
+            Get a list of comments of a task/post before timestamp limited by a number
+
+            Example:
+
+                /webapp/task/comment/?timestamp=1405659283&limit=1&tid=53c77ccad4901831badcb98d&type=1
 
   - DELETE :
 
@@ -1095,19 +1099,8 @@ Applighter API
 
 
 
-
-#### Post
-
  
-  - GET :
-
-      - URL : /webapp/post/u?timestamp=(float)&userid=(int)&limit=(id)&type=(type)
-
-            Get a list of comments of a task/post before timestamp limited by a number
-
-            Example:
-
-                /webapp/task/comment/?timestamp=1405659283&limit=1&tid=53c77ccad4901831badcb98d&type=1
+  
 
 
 
