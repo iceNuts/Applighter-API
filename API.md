@@ -1061,7 +1061,7 @@ Applighter API
  
   - GET :
 
-      - URL : /webapp/post/u/?timestamp=(float)&userid=(int)&limit=(id)&type=(type)
+      - URL : /webapp/post/u?timestamp=(float)&userid=(int)&limit=(id)&type=(type)
 
             Get a list of comments of a task/post before timestamp limited by a number
 
