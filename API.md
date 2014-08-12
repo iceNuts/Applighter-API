@@ -958,7 +958,7 @@ Applighter API
 
         - Get an award info by award object id
 
-      - URL : /webapp/user/award/u/user id
+      - URL : /webapp/user/award
 
         - Get a list of awards by user id
 
@@ -999,7 +999,7 @@ Applighter API
 
         - Get an doings info by doings object id
 
-      - URL : /webapp/user/doings/u/user id
+      - URL : /webapp/user/doings
 
         - Get a list of awards by user id
 
