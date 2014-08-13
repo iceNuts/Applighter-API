@@ -743,7 +743,7 @@ Applighter API
 
             Example:
 
-                /webapp/task/comment/?timestamp=1405659283&limit=1&tid=53c77ccad4901831badcb98d&type=1
+                /webapp/task/comment/?timestamp=1405659283&limit=1&tid=53c77ccad4901831badcb98d
 
 #### Activity
 
