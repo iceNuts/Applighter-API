@@ -723,7 +723,7 @@ Applighter API
 
   - POST :
 
-      - URL : /webapp/task/comment
+      - URL : /webapp/op/comment
 
         - Create a new Comment
 
@@ -737,7 +737,7 @@ Applighter API
 
   - GET :
 
-      - URL : /webapp/task/comment?timestamp=(float)&limit=(int)&tid=(id)&type=(type)
+      - URL : /webapp/op/comment?timestamp=(float)&limit=(int)&tid=(id)&type=(type)
 
             Get a list of comments of a task/post before timestamp limited by a number
 
