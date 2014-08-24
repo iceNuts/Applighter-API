@@ -754,16 +754,16 @@ Applighter API
         - Get a list of activity
 
               activity_types = {
-                                'post' :        0,      # 添加/修改了 post
-                                'comment' :     1,      # 评论了
-                                'appfile' :     2,      # 上传了
-                                'task' :        3,      # 添加了task 修改了task
-                                'deadline' :    4,      # deadline(task)  (服务器/Mobile)发生当天有提醒 （Mobile)提前两天
-                                'taskgroup' :   8,      # TaskGroup Info
-                                'award':9,
-                                'doings':10,
-                                'counselor' :   101,      # Counselor Change
-                                'school' :      102,      # School Change
+                      'post' :        0,     
+                      'comment' :     1,      
+                      'appfile' :     2,      
+                      'task' :        3,      
+                      'deadline' :    4,     
+                      'taskgroup' :   8,      
+                      'award':        9,
+                      'doings':       10,
+                      'counselor' :   101,     
+                      'school' :      102,      
                               }
 
 
