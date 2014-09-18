@@ -1,247 +1,40 @@
 Applighter API
 ================
 
-#### School
-  - URL: /webapp/school
+#### 学校信息api
+  - base URL: /webapp/school
     
   - GET: 
             /webapp/school/o/object_id
 
            Get One School Information in Json
 
-           /webapp/school
+           /webapp/school/a/schoolrank 
 
-           Get A list of School Information
-
-           Or return 500 error
-
-  - POST:
-           /webapp/school
-
-           POST in Json
-
-           Return 200 OK or 500 error
-
-  - PUT:
-           /webapp/school
-
-           PUT in Json
-
-           Return 200 OK or 500 error
-
-  - DELETE:
-            /webapp/school/o/object_id
-
-           Delete One School Information
-
-           Or return 500 error
-
-    POST Json Example:
-
-            {
-                "school_name":"wahsington university in st.louis",
-                "chinese_name":"圣路易斯华盛顿",
-                "school_rank":"14",
-                "school_location":"One Brookings Drive",
-                "ad_office":"OneBrookings Drive",
-                "school_geo":"31.44, -127.56",
-                "school_website":"http://wustl.edu",
-                "contact":
-                {
-                  "phone":"314-591-2233",
-                  "email":"wash@wustl.edu"
-                },
-               "common_app": 0,
-               "retention": 3.4,
-               "description":"this is an awesome school",
-               "thumbnail":"wow",
-               "deadlines":{
-                  "EA":"2014-03-01",
-                  "ED":"2014-04-05"
-               },
-               "landscape":[
-                  "lin 1",
-                  "link 2"
-               ],
-               "GPA":"3.99",
-               "ACT":{
-                  "math":{
-
-                  }
-               },
-               "SAT":{
-
-               },
-               "tuition":"65500",
-               "undergraduate":"7600",
-               "acceptance":"17.6",
-               "fun":"B+Academics AAthletics B+Campus Dining B-Campus Housing B+Campus Strictness B+Computers B+Diversity BDrug Safety A-Facilities BGirls B+Greek Life B-Guys B-Health & Safety A-Local Atmosphere ANightlife AOff-Campus Dining B-Off-Campus Housing C-Parking B+Transportation C+Weather",
-               "note":["女生比较丑？","男生比较帅!"],
-               "department":
-               [
-                  {
-                    "name":"computer science",
-                    "rank":"39",
-                    "contact":
-                    {
-                      "phone":"314-808-7722",
-                      "email":"cse@wustl.edu"
-                    }
-                  }
-               ]
-            }
-
-    PUT Json Example:
-
-            {
-                "obj_id":"ab213129asded21"
-                "school_name":"wahsington university in st.louis",
-                "school_rank":"14",
-                "school_location":"One Brookings Drive",
-                "ad_office":"OneBrookings Drive",
-                "school_geo":"31.44, -127.56",
-                "school_website":"http://wustl.edu",
-                "contact":
-                {
-                  "phone":"314-591-2233",
-                  "email":"wash@wustl.edu"
-                },
-               "common_app": 0,
-               "retention": 2.7,
-               "description":"this is an awesome school",
-               "thumbnail":"wow",
-               "deadlines":{
-                  "EA":"2014-03-01",
-                  "ED":"2014-04-05"
-               },
-               "landscape":[
-                  "lin 1",
-                  "link 2"
-               ],
-               "GPA":"3.99",
-               "ACT":{
-                  "math":{
-
-                  }
-               },
-               "SAT":{
-
-               },
-               "tuition":"65500",
-               "undergraduate":"7600",
-               "acceptance":"17.6",
-               "fun":"B+Academics AAthletics B+Campus Dining B-Campus Housing B+Campus Strictness B+Computers B+Diversity BDrug Safety A-Facilities BGirls B+Greek Life B-Guys B-Health & Safety A-Local Atmosphere ANightlife AOff-Campus Dining B-Off-Campus Housing C-Parking B+Transportation C+Weather",
-               "note":["女生比较丑？","男生比较帅!"],
-               "department":
-               [
-                  {
-                    "name":"computer science",
-                    "rank":"39",
-                    "contact":
-                    {
-                      "phone":"314-808-7722",
-                      "email":"cse@wustl.edu"
-                    }
-                  }
-               ]
-            }
+           schoolrank == 1 前50
+           schoolrank == 2 50到100
+           schoolrank == 3 100到150
 
 
 
-#### Upload File
+#### 上传文件api
 
-  - URL: /webapp/ajax/upload/file
 
-  - Available file keys:
+  - POST URL: /webapp/ajax/upload/file
 
-    - file
+  - url后面跟参数为userid
+        -- example: /webapp/ajax/upload/file/5403cbafc030e25f861b482f
+
+  - post本身不带参数
+
+  - Available file types:
+
+    - file_types = ['docx', 'pdf', 'doc', 'docm', 'dotx', 'dotm', 'txt', 'jpeg', 'png', 'jpg','xls','xlsx','ppt','pptx']
   
-  - POST:
-
-         {
-            'path': path on OSS
-         }
-          
-         Upload file onto OSS. File type required: 
-
-         docx
-
-         pdf
-
-         doc
-
-         docm
-
-         dotm
-
-         txt
-
-         jpeg
-
-         png
-
-         jpg
-
-         File path rule:
-
-         orgnization name / (user id | school name ) / file type
-
-         example:
-
-            yunshen/53c4e54bd49018d78cbb42e6/png
-
-         Store everything which is OUR COMPANY in yunshen, like school thumbnail or landscap etc.
-
-         Path should be all in lower case.
-
-         When you have uploaded the file, use long polling to validate the file has been uploaded successfully. Then create an appfile index.
-
-         - POST :
-
-            URL : /webapp/op/appfile
-
-            {
-                "owner_object_id" : task/post/.. id,
-                "alias" : file name,
-                "description" : file description,
-                "version" : version #,
-                "url" : file link
-            }
-
-            Create a new appfile index
-
-          - GET :
-
-            URL : /webapp/op/appfile/o/obj_id
-
-              Get an appfile index by object id
-
-            URL : /webapp/op/appfile/oo/object owner id
-
-              Get a list appfile index by object owner id
-
-          - PUT :
-
-            URL : /webapp/op/appfile
-
-            {
-                "appfile" : appfile index id,
-                "alias"   : file name,
-                "description"   : file description,
-                "version" : version #,
-                "url" : file link
-            }
-
-            Update an appfile index
-
-          - Delete :
-
-            URL : /webapp/op/appfile/o/object id
-
-            Delete an appfile index
+ 
 
 
-#### Session
+#### Session字段说明
 
   - Schema:
 
@@ -250,14 +43,10 @@ Applighter API
             token: token
         }
 
-#### Custom Decorator
-
-  - Availabel decorators:
-
-          @user_login_required : require any http request method 
 
 
-#### User 
+#### User用户api
+
   
   - register 
 
@@ -435,26 +224,7 @@ Applighter API
 
         - URL : /webapp/user/o/obj_id
 
-    - QUICK SEARCH
-
-        - URL : /webapp/user/quicksearch
-
-        - GET :
-
-                Simply return a list of user's name/uid/avatar, see example:
-
-                    { 
-                        "result" :
-                        [
-                          {
-                              "name" : name,
-                              "_id" : uid,
-                              "avatar" : avatar link,
-                              'user_type' : 0 admin/1 counselor/2 student/4 parent
-                          }
-                          ...
-                        ]
-                    }
+   
 
     - USER ACTIVATION (Gmail Enterprise As Mail Server)
 
@@ -478,6 +248,16 @@ Applighter API
         - GET :
 
             User click on the activation url. Frontend should check if the cookie holds userid and token(logged in?). If not logged in, frontend should redirect user to login view, afterwards, continue redirecting to activation url.
+
+
+    - 获取学生顾问列表api
+        - URL : /webapp/usercounselor/o/userid
+        - GET 方法 URL中带userid参数
+
+    - 获取学生近期任务列表api
+        - URL : /webapp/user/recenttask/o/userid
+        - GET 方法 URL中带userid参数
+
 
   - Counselor
 
@@ -514,132 +294,10 @@ Applighter API
 
           Put Counselor user name(email). Student should logged in.
 
-#### Event
 
-  - POST :
+#### TaskGroup学校列表
 
-      - URL : /webapp/user/event
-
-          Json example:
-
-              {  
-                 "title":"一起打飞机",
-                 "location":"WashU",
-                 "start_time":"2014-06-07 12:40",
-                 "end_time":"2014-06-07 13:40",
-                 "alert":{  
-                    "trigger_time":"2014-06-07 11:00",
-                    "alert_type":0,
-                    "userids":
-                    [  
-                       "53bff6f2d49018ce8d86435f"
-                    ]
-                 },
-                 "invitees":[  
-                    {
-                      "userid" : "53bff6f2d49018ce8d86435f",
-                      "status" : "-1"
-                    }
-                 ]
-              }
-
-          Optional: alert and invitees could empty, like:
-
-              {  
-                 "title":"一起打飞机",
-                 "location":"WashU",
-                 "start_time":"2014-06-07 12:40",
-                 "end_time":"2014-06-07 13:40",
-                 "alert":{  
-                 },
-                 "invitees":[  
-                 ]
-              }
-
-          About invitees:
-              
-              {
-                "userid": id
-                "status": -1
-              }
-
-              -1 is initial state;(default)
-
-              0 is deny;
-
-              1 is accept;
-
-  - GET :
-
-      - URL : /webapp/user/event/o/obj_id 
-
-            Return a specific event
-
-      - URL : /webapp/user/event 
-
-            Return user's all events
-
-  - PUT :
-
-      - URL : /webapp/user/event
-
-      Json is similar with POST, all fields are required.
-
-            {
-                "id" : event object id
-
-                ....
-            }
-
-  - DELETE :
-
-      - URL : /webapp/user/event/o/obj_id
-
-#### Event Invitation (non-test)
-
-  - URL : /webapp/event/invitation
-
-    - Resend Invitation 
-
-            {
-                "event" : event id,
-                "userid" : userid
-            }
-
-            Send this event invitation to user
-
-    - Accept Invitation
-
-            {
-                "event" : event id, 
-            }
-
-            Accept this event invitation
-
-    - Decline Invitation
-
-            {
-                 "event" : event id
-            }
-
-            Decline this event invitation
-
-#### TaskGroup
-
-  - POST :
-
-      - URL : /webapp/taskgroup
-
-        - Create a new TaskGroup
-
-                {
-                   "userid": TG task owner id,
-                   "alias" : TG name,
-                   "description" : TG description
-                }
-
-            create a TG for student
-
+ 
   - GET :
 
       - URL : /webapp/taskgroup/o/obj_id
@@ -669,7 +327,7 @@ Applighter API
 
         - Counselor deletes a taskgroup by id
 
-#### Task
+#### Task学生任务
 
   - POST :
 
@@ -709,8 +367,7 @@ Applighter API
                     "alias": task name,
                     "description": TG description,
                     "associate_owners": everybody who is involved, id,
-                    "deadline": "2014-03-24 03:24",
-                    "task_status": 0/1 inactive? active?
+                    "deadline": "UTC timestamp",
                 }
 
   - DELETE :
