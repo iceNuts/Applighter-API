@@ -24,7 +24,7 @@ Magic Stone API
   - HTTP请求方式: GET 
            
   - 返回数据：
-
+```json
     {
       "username": "cooldude6",
       "sessionToken": "hrphjmsubxm56za56pxc6m3jr",
@@ -35,7 +35,7 @@ Magic Stone API
       "emailVerified": false,
       "updatedAt": "2014-11-24T10:17:26.676Z"
     }
-
+```
 
 
 
@@ -55,7 +55,7 @@ Magic Stone API
   - HTTP请求方式: GET 
 
   - 返回数据：
-
+```json
    {
     "results": [
         {
@@ -102,8 +102,7 @@ Magic Stone API
         }
     ]
 }
-
-  
+```
  
 
 
